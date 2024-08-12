@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f98fc77f1e.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Home Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            list-style: none;
+            font-family: "Poppins", sans-serif;
+            text-decoration: none;
+        }
+        
+        /* body{
+            font-family: ;
+        } */
+        
+        nav {
+            background: #1f242d;
+            width: 100%;
+            height: 80px;
+            /* position: fixed; */
+        }
+        
+        label.logo {
+            font-size: 35px;
+            color: white;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            float: right;
+            margin-right: 20px;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+        }
+        
+        a.active,
+        a:hover {
+            background-color: gold;
+            transition: 0.5s;
+            color: black;
+        }
+        
+        .checkbtn {
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+        
+        #check {
+            display: none;
+        }
+        
+        @media (max-width: 952px) {
+            label.logo {
+                padding-left: 50px;
+                font-size: 30px;
+            }
+        
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width:858px) {
+            .checkbtn {
+                display: block;
+            }
+        
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: #1f242d;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all 0.5s;
+            }
+        
+            nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+        
+            nav ul li a {
+                font-size: 20px;
+            }
+        
+            a:hover,
+            a.active {
+                background: gold;
+                color: black;
+            }
+        
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+        
+        section {
+            /* background: url(img/python-programming-programming-programming-language-code-hd-wallpaper-preview.jpg);
+            background-size: cover;
+            height: calc(100vh -80px); */
+        }
+        
+        .landing {
+            /* border: 2px solid black; */
+            height: 90vh;
+            display: flex;
+            width: 100%;
+            background-color: #1f242d;
+            /* position: absolute; */
+            /* top: 80px; */
+            color: white;
+        }
+        
+        .landing-text {
+            /* border: 2px solid black; */
+            height: 88vh;
+            width: 50%;
+            /* text-align: justify; */
+            padding: 80px 0px 30px 30px;
+        }
+        
+        .landing-image {
+            /* border: 2px solid black; */
+            height: 88vh;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .icons i {
+            border: 2px solid gold;
+            border-radius: 50%;
+            padding: 5px;
+            /* color: white; */
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .icons i:hover {
+            background-color: gold;
+            box-shadow: 0 0 1rem gold;
+            color: black;
+        }
+        
+        #btn {
+            border: 0;
+            outline: 0;
+            background-color: gold;
+            padding: 10px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            margin: 20px 0px 20px 0px;
+            font-weight: bold;
+        }
+        
+        #btn:hover {
+            box-shadow: 0 0 1rem gold;
+            transition-duration: 0.5s;
+        }
+        
+        .landing-text h1 {
+            line-height: 50px;
+            font-size: 40px;
+        }
+        
+        .landing-text h3 {
+            line-height: 50px;
+        }
+        
+        .landing-text p {
+            line-height: 35px;
+        }
+        
+        @media (max-width: 1235px) {
+            .landing-image img {
+                width: 500px;
+            }
+        
+            .landing-text p {
+                text-align: justify;
+            }
+        }
+        
+        @media (max-width: 1135px) {
+            .landing-image img {
+                width: 400px;
+            }
+        
+            .landing-text p {
+                text-align: justify;
+            }
+        }
+        
+        @media (max-width: 930px) {
+            .landing-image img {
+                width: 350px;
+            }
+        
+            .landing-text p {
+                text-align: justify;
+            }
+        }
+        
+        @media (max-width: 832px) {
+        
+            .landing {
+                display: block;
+                text-align: center;
+                /* height: 186px; */
+            }
+        
+            .landing-text,
+            .landing-image {
+                width: 100%;
+            }
+        
+            .landing-text {
+                padding-right: 50px;
+            }
+        
+            .landing-image {
+                /* background-color: #1f242d; */
+                display: none;
+                /* min-height: 0vh; */
+                /* padding: 0; */
+            }
+        
+            .landing-image img {
+                width: 500px;
+            }
+        }
+        
+        @media (max-width: 535px) {
+            .landing-image img {
+                width: 400px;
+            }
+        }
+        
+        @media (max-width: 425px) {
+            .landing-image img {
+                width: 360px;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            .landing-image img {
+                width: 320px;
+            }
+        }
+        
+        .cards {
+            /* border: 2px solid green; */
+            min-height: 240vh;
+            width: 100%;
+            text-align: center;
+            color: white;
+            background-color: #1f242d;
+        }
+        
+        .first-card,
+        .second-card,
+        .third-card {
+            /* border: 2px solid red; */
+            min-height: 90vh;
+            text-align: center;
+            display: flex;
+            /* text-align: center; */
+            justify-content: space-around;
+            align-items: center;
+            /* gap: 40px; */
+        }
+        
+        .a,
+        .b,
+        .c,
+        .d,
+        .e,
+        .f {
+            /* border: 2px solid red; */
+            height: 500px;
+            width: 500px;
+            border-radius: 10px;
+            padding: 0px 20px;
+            text-align: center;
+        }
+        
+        #btn i {
+            font-size: 20px;
+            padding-left: 20px;
+        }
+        
+        .btn {
+            display: flex;
+        }
+        
+        .a h2,
+        .b h2,
+        .c h2,
+        .d h2,
+        .e h2,
+        .f h2 {
+            margin: 10px;
+        }
+        
+        .a i,
+        .b i,
+        .c i,
+        .d i,
+        .e i,
+        .f i {
+            font-size: 100px;
+        }
+        
+        .a p,
+        .b p,
+        .c p,
+        .d p,
+        .e p,
+        .f p {
+            text-align: justify;
+        }
+        
+        .cards h1 {
+            /* margin: 20px 10px; */
+            padding-bottom: 30px;
+        }
+        
+        @media (max-width: 832px) {
+        
+            .first-card,
+            .second-card,
+            .third-card {
+                display: block;
+            }
+        
+            .a,
+            .b,
+            .c,
+            .d,
+            .e,
+            .f {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 373px) {
+            .landing {
+                height: 100vh;
+            }
+        }
+        
+        .band {
+            min-height: 80vh;
+            width: 100%;
+            /* border: 2px solid red; */
+            background: linear-gradient(-290deg, gold, yellow, gold);
+            display: flex;
+        }
+        
+        .spinner-div,
+        .content {
+            /* border: 2px solid green; */
+            /* height: 200px; */
+            width: 50%;
+        }
+        
+        .spinner-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .spinner {
+            height: 400px;
+            width: 400px;
+            border: 10px solid green;
+            /* border-radius: 50%; */
+            border-top-color: red;
+            border-radius: 50%;
+            animation: spin 1s infinite;
+            border-top-width: 40px;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0);
+            }
+        
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .crypto-coin {
+            width: 400px;
+            height: 400px;
+            background-color: transparent;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: white;
+            animation: spin 3s linear infinite, colorChange 6s linear infinite;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+        
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        
+        
+        .content {
+            text-align: center;
+            padding: 10px 20px;
+        }
+        
+        .content h1 {
+            line-height: 70px;
+        }
+        
+        .content p {
+            line-height: 30px;
+        }
+        
+        @media (max-width: 840px) {
+            .band {
+                display: block;
+            }
+        
+            .spinner-div {
+                width: 100%;
+                padding: 20px 0px;
+            }
+        
+            .content {
+                width: 100%;
+            }
+        }
+        
+        .slider {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: g;
+            box-shadow: 0 4px 3rem gold;
+            transition-duration: 1s;
+        }
+        
+        .slider:hover {
+            box-shadow: none;
+            transition-duration: 1s;
+        }
+        
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .slide img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+            height: 500px;
+        }
+        
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        
+        .navigation button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            /* color: gold; */
+            font-size: 24px;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            /* border-radius: 50%; */
+            transition: background-color 0.3s;
+        }
+        
+        .navigation button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .slider-main {
+            height: 120vh;
+            /* border: 2px solid green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1f242d;
+        }
+        
+        .faq-container {
+            width: 100%;
+            max-width: 1200px;
+            background-color: #323946;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: white;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .faq {
+            border-top: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        
+        .faq:first-of-type {
+            border-top: none;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: none;
+            text-align: left;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #323946;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-answer p {
+            padding: 0 15px;
+        }
+        
+        .abc {
+            height: 100vh;
+            background-color: #1f242d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+        
+        .footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1 1 200px;
+            margin: 20px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        
+        .footer-section p,
+        .footer-section ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: gold;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+        
+        .footer .social-links {
+            /* display: flex; */
+            gap: 10px;
+        }
+        
+        .footer .social-links li {
+            /* display: inline; */
+        }
+        
+        .footer .newsletter-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer .newsletter-form input[type="email"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .footer .newsletter-form button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1e90ff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .footer .newsletter-form button:hover {
+            background-color: #3ebeff;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer .container {
+                flex-direction: column;
+                 /* display: block; */
+            }
+        
+            .footer-section {
+                margin: 10px 0;
+            }
+        }
+        
+        #last {
+            box-shadow: 0 0 1rem gold;
+            font-weight: bold;
+            transition-duration: 1s;
+        }
+        
+        #last:hover {
+            box-shadow: none;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label for="" class="logo">Coin<span style="color: gold;">X</span></label>
+        <ul>
+            <li><a class="active" href="#">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">FEEDBACK</a></li>
+        </ul>
+    </nav>
+    <section></section>
+
+    <div class="landing">
+        <!-- First (Content) part of landing -->
+        <div class="landing-text">
+            <h1>Buy <span style="color: gold;">Coins</span> Of Your Own Choice According To Prices</h1>
+            <h3>Coin<span style="color: gold;">X</span> can provide you the best coins ever.</h3>
+            <p> Every one is going to buy new and latest crypto coins because in the future there will be only the
+                digital currency and not the paper money and cryptocurrency is a special kind of currency.</p>
+            <button id="btn" style="margin-right: 10px;">Buy Bitcoins</button>
+            <button id="btn">Get Crypto</button><br>
+            <div class="icons">
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-twitter'></i>
+                <i class='bx bxl-linkedin'></i>
+                <i class='bx bx-globe'></i>
+            </div>
+        </div>
+
+        <!-- Second (Image) part of landing -->
+        <div class="landing-image">
+            <img src="/static/img/bitcoin-removebg-preview.png" alt="">
+        </div>
+    </div>
+
+    <div class="cards">
+
+        <h1 style="font-size: 40px;">Famous <span style="color: gold;">Cryptocurrency</span> Markets</h1>
+        <!-- First card line -->
+        <div class="first-card" id="first-card">
+            <div class="a">
+                <h2>Bitcoin</h2>
+                <i class='bx bxl-bitcoin'></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, temporibus nihil? Quis nisi fugit
+                    natus ipsa id possimus suscipit sed cum saepe. Qui error quos sint, animi architecto modi quis
+                    voluptatum quia repudiandae dolorem, debitis magni distinctio alias officiis aspernatur adipisci
+                    reiciendis nemo? Odit, nulla mollitia debitis itaque porro architecto.</p>
+                <button id="btn" class="btn">Read More <i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+            <div class="b">
+                <h2>Etherium</h2>
+                <i class='bx bx-strikethrough'></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, temporibus nihil? Quis nisi fugit
+                    natus ipsa id possimus suscipit sed cum saepe. Qui error quos sint, animi architecto modi quis
+                    voluptatum quia repudiandae dolorem, debitis magni distinctio alias officiis aspernatur adipisci
+                    reiciendis nemo? Odit, nulla mollitia debitis itaque porro architecto.</p>
+                <button id="btn" class="btn">Read More <i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+        </div>
+
+        <!-- Second card line -->
+        <div class="second-card">
+            <div class="c">
+                <h2>BNB</h2>
+                <i class='bx bxl-airbnb'></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, temporibus nihil? Quis nisi fugit
+                    natus ipsa id possimus suscipit sed cum saepe. Qui error quos sint, animi architecto modi quis
+                    voluptatum quia repudiandae dolorem, debitis magni distinctio alias officiis aspernatur adipisci
+                    reiciendis nemo? Odit, nulla mollitia debitis itaque porro architecto.</p>
+                <button id="btn" class="btn">Read More <i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+            <div class="d">
+                <h2>SOL</h2>
+                <i class='bx bxl-trip-advisor'></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, temporibus nihil? Quis nisi fugit
+                    natus ipsa id possimus suscipit sed cum saepe. Qui error quos sint, animi architecto modi quis
+                    voluptatum quia repudiandae dolorem, debitis magni distinctio alias officiis aspernatur adipisci
+                    reiciendis nemo? Odit, nulla mollitia debitis itaque porro architecto.</p>
+                <button id="btn" class="btn">Read More <i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+        </div>
+
+        <!-- Third card line -->
+        <div class="third-card">
+            <div class="e">
+                <h2>Dodge</h2>
+                <i class='bx bxs-dollar-circle'></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, temporibus nihil? Quis nisi fugit
+                    natus ipsa id possimus suscipit sed cum saepe. Qui error quos sint, animi architecto modi quis
+                    voluptatum quia repudiandae dolorem, debitis magni distinctio alias officiis aspernatur adipisci
+                    reiciendis nemo? Odit, nulla mollitia debitis itaque porro architecto.</p>
+                <button id="btn" class="btn">Read More <i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+            <div class="f">
+                <h2>ADA</h2>
+                <i class='bx bx-radar'></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, temporibus nihil? Quis nisi fugit
+                    natus ipsa id possimus suscipit sed cum saepe. Qui error quos sint, animi architecto modi quis
+                    voluptatum quia repudiandae dolorem, debitis magni distinctio alias officiis aspernatur adipisci
+                    reiciendis nemo? Odit, nulla mollitia debitis itaque porro architecto.</p>
+                <button id="btn" class="btn">Read More <i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Band -->
+    <div class="band">
+        <div class="spinner-div">
+            <div class="crypto-coin">
+                <div class="crypto-symbol"><img src="/static/img/bitcoin2-removebg-preview.png"
+                        alt="" width="400px">
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h1>
+                <h1>The Exchanger <span>Bitcoin</span></h1>
+            </h1>
+            <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                mollitia optio repellat quod, accusamus hic sed iste atque corrupti nisi asperiores pariatur ipsam
+                molestiae a deserunt placeat voluptatibus eligendi amet provident, autem unde! Deleniti doloribus modi
+                eum eveniet dolorum maiores officia, saepe voluptatem enim tempore labore debitis veniam! Temporibus
+                magnam eligendi hic, ea voluptates numquam quidem doloribus ut minus modi reiciendis similique facere,
+                quis molestias accusantium veniam asperiores! Eum veritatis distinctio saepe ducimus voluptate commodi
+                voluptates possimus, eligendi ut quibusdam perferendis vitae neque iure quas quam quis ullam cum et
+                perspiciatis. Doloribus aliquam ipsam expedita pariatur illo ex quod architecto.</p>
+            <button id="btn">More About Bitcoin <i class='bx bx-right-arrow-alt'></i></button>
+        </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="slider-main">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img
+                        src="https://images.pexels.com/photos/844127/pexels-photo-844127.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Image 1"></div>
+                <div class="slide"><img
+                        src="https://images.pexels.com/photos/1108313/pexels-photo-1108313.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Image 2"></div>
+                <div class="slide"><img
+                        src="https://www.investopedia.com/thmb/2RLRrnmeDEoU3BECEWQ46o8kU9k=/1000x667/filters:no_upscale():max_bytes(150000):strip_icc()/cryptocurrency-f6026a2012a14aaa9ef8a1c277fde0f7.jpg"
+                        alt="Image 3"></div>
+                <div class="slide"><img
+                        src="https://images.pexels.com/photos/4025825/pexels-photo-4025825.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Image 4"></div>
+            </div>
+            <div class="navigation">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQS -->
+
+    <div class="abc">
+        <div class="faq-container">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq">
+                <button class="faq-question">What is cryptocurrency?</button>
+                <div class="faq-answer">
+                    <p>Cryptocurrency is a type of digital or virtual currency that uses cryptography for security and
+                        operates independently of a central bank.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question">How do I buy cryptocurrency?</button>
+                <div class="faq-answer">
+                    <p>You can buy cryptocurrency through exchanges, brokers, or other people via peer-to-peer
+                        transactions.
+                    </p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question">Is cryptocurrency secure?</button>
+                <div class="faq-answer">
+                    <p>While cryptocurrencies use advanced cryptography and decentralized networks to secure
+                        transactions,
+                        they are also subject to hacking, scams, and volatility.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Diglus Pura, near GC University, Faislabad</p>
+                <p>Email: eishh@example.com</p>
+                <p>Phone: (042) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul class="social-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="quick-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required style="border: 0; outline: 0;">
+                    <button type="submit" style="background-color: gold; color: black;" id="last">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company. All Rights Reserved. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Made by: Hafiz M. Abdullah</p>
+        </div>
+    </footer>
+    <script>
+        const slides = document.querySelector(".slides");
+const slideImages = document.querySelectorAll(".slide");
+ 
+let currentIndex = 0;
+const totalSlides = slideImages.length;
+
+document.querySelector(".prev").addEventListener("click", showPrevSlide);
+document.querySelector(".next").addEventListener("click", showNextSlide);
+ 
+function showPrevSlide() {
+  currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+  updateSlidePosition();
+}
+
+function showNextSlide() {
+  currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+  updateSlidePosition();
+}
+
+function updateSlidePosition() {
+  slides.style.transform = "translateX(" + -currentIndex * 100 + "%)";
+}
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach((question) => {
+  question.addEventListener("click", () => {
+    const answer = question.nextElementSibling;
+    const currentlyActive = question.classList.contains("active");
+
+    // Close all answers
+    document.querySelectorAll(".faq-answer").forEach((answer) => {
+      answer.style.maxHeight = null;
+    });
+
+    // Remove active class from all questions
+    faqQuestions.forEach((question) => {
+      question.classList.remove("active");
+    });
+
+    // If the clicked question is not currently active, open it
+    if (!currentlyActive) {
+      question.classList.add("active");
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
+
+    </script>
+</body>
+
+</html>
